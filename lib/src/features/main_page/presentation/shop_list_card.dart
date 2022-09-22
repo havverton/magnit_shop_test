@@ -16,30 +16,33 @@ class ShopCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        if (context.read<FilterBloc>().state is LoadedDefaultState) {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => ShopCardPage(result.shop),
-            ),
-          );
-        }
-        if (context.read<FilterBloc>().state is LoadedByFilterState) {
-          var product = result.product ?? Product(-1, "Error");
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => ProductCardPage(product),
-            ),
-          );
-        }
-      },
-      child: Container(
-        color: Colors.green,
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        child: Center(
-            child: Text(
-                "${result.shop.name} (${result.shop.products.first.name})")),
+    return Material(
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20),
+        onTap: () {
+          if (context.read<FilterBloc>().state is LoadedDefaultState) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => ShopCardPage(result.shop),
+              ),
+            );
+          }
+          if (context.read<FilterBloc>().state is LoadedByFilterState) {
+            var product = result.product ?? Product(-1, "Error");
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => ProductCardPage(product),
+              ),
+            );
+          }
+        },
+        child: Container(
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.red),
+              borderRadius: BorderRadius.circular(20)),
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: Center(child: Text("${result.shop.name}")),
+        ),
       ),
     );
   }

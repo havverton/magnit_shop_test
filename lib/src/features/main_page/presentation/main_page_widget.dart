@@ -51,8 +51,9 @@ class MainPageWidget extends StatelessWidget {
                           child: Text("Здесь пока что пусто"),
                         );
                       }
-                      return ListTile(
-                        title: ShopCard(list[index]),
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: ShopCard(list[index]),
                       );
                     },
                   );

@@ -14,39 +14,45 @@ class FilterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FilterBloc, FilterState>(builder: (context, state) {
-      return Column(
-        children: [
-          const Text("Фильтры"),
-          TextFormField(
-            controller: productController,
-            decoration: const InputDecoration(
-              border: InputBorder.none,
-              hintText: 'Название',
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        child: Column(
+          children: [
+            const Text("Фильтры"),
+            TextFormField(
+              controller: productController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Название',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: detailController,
-            decoration: const InputDecoration(
-              border: InputBorder.none,
-              hintText: 'Параметр',
+            SizedBox(height: 10),
+            TextFormField(
+              controller: detailController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Параметр',
+              ),
             ),
-          ),
-          Row(
-            children: [
-              TextButton(
-                  onPressed: () {
-                    context.read<FilterBloc>().add(const LoadShops());
-                  },
-                  child: const Text("Отмена")),
-              TextButton(
-                  onPressed: () {
-                    context.read<FilterBloc>().add(LoadByFilter(FilterQuery(
-                        productController.text, detailController.text)));
-                  },
-                  child: const Text("Принять")),
-            ],
-          )
-        ],
+            Row(
+              children: [
+                TextButton(
+                    onPressed: () {
+                      context.read<FilterBloc>().add(const LoadShops());
+                      productController.clear();
+                      detailController.clear();
+                    },
+                    child: const Text("Отмена")),
+                TextButton(
+                    onPressed: () {
+                      context.read<FilterBloc>().add(LoadByFilter(FilterQuery(
+                          productController.text, detailController.text)));
+                    },
+                    child: const Text("Принять")),
+              ],
+            )
+          ],
+        ),
       );
     });
   }
