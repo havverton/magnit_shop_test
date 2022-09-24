@@ -20,20 +20,22 @@ class ShopCard extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(20),
         onTap: () {
-          if (context.read<FilterBloc>().state is LoadedDefaultState) {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => ShopCardPage(result.shop),
-              ),
-            );
-          }
-          if (context.read<FilterBloc>().state is LoadedByFilterState) {
-            var product = result.product ?? Product(-1, "Error");
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => ProductCardPage(product),
-              ),
-            );
+          final state = context.read<FilterBloc>().state;
+          if (state is LoadedState) {
+            if (state.filter) {
+              var product = result.product ?? Product(-1, "Error");
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ProductCardPage(product),
+                ),
+              );
+            } else {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ShopCardPage(result.shop),
+                ),
+              );
+            }
           }
         },
         child: Container(
@@ -41,7 +43,7 @@ class ShopCard extends StatelessWidget {
               border: Border.all(color: Colors.red),
               borderRadius: BorderRadius.circular(20)),
           padding: const EdgeInsets.symmetric(vertical: 20),
-          child: Center(child: Text("${result.shop.name}")),
+          child: Center(child: Text(result.shop.name)),
         ),
       ),
     );

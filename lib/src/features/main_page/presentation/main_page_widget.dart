@@ -36,26 +36,28 @@ class MainPageWidget extends StatelessWidget {
                     context.read<FilterBloc>().add(const LoadShops());
                   }
 
-                  var list = [];
-                  if (state is LoadedByFilterState) {
-                    list = state.shops;
-                  }
-                  if (state is LoadedDefaultState) {
-                    list = state.shops;
-                  }
-                  return ListView.builder(
-                    itemCount: list.length,
-                    itemBuilder: (context, index) {
-                      if (list.isEmpty) {
-                        return const Center(
-                          child: Text("Здесь пока что пусто"),
-                        );
-                      }
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: ShopCard(list[index]),
+                  if (state is LoadedState) {
+                    var list = state.shops;
+
+                    if (list.isEmpty) {
+                      return const Center(
+                        child: Text("Здесь пока что пусто"),
                       );
-                    },
+                    }
+
+                    return ListView.builder(
+                      itemCount: list.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: ShopCard(list[index]),
+                        );
+                      },
+                    );
+                  }
+
+                  return const Center(
+                    child: Text("Что то пошло не так"),
                   );
                 },
               ),

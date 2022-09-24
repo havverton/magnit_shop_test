@@ -2,5 +2,5 @@ class FilterQuery {
   final String productQuery;
   final String detailsQuery;
 
-  FilterQuery(this.productQuery, this.detailsQuery);
+  const FilterQuery(this.productQuery, this.detailsQuery);
 }

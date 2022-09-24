@@ -3,13 +3,31 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magnit_shop_test/src/features/main_page/bloc/filter_bloc.dart';
 import 'package:magnit_shop_test/src/features/main_page/domain/filter_query_model.dart';
 
-class FilterWidget extends StatelessWidget {
+class FilterWidget extends StatefulWidget {
   FilterWidget({
     Key? key,
   }) : super(key: key);
 
-  final TextEditingController productController = TextEditingController();
-  final TextEditingController detailController = TextEditingController();
+  @override
+  State<FilterWidget> createState() => _FilterWidgetState();
+}
+
+class _FilterWidgetState extends State<FilterWidget> {
+  late final TextEditingController productController;
+
+  late final TextEditingController detailController;
+
+  @override
+  void initState() {
+    productController = TextEditingController();
+    detailController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    productController.dispose();
+    detailController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +41,15 @@ class FilterWidget extends StatelessWidget {
               controller: productController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Название',
+                hintText: 'Название товара',
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextFormField(
               controller: detailController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Параметр',
+                hintText: 'Данные параметра',
               ),
             ),
             Row(

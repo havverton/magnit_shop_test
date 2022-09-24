@@ -6,9 +6,9 @@ import 'package:magnit_shop_test/src/models/product_detail.dart';
 import 'package:magnit_shop_test/src/models/shop.dart';
 
 class FilterService {
-  late Box<Shop> _shops;
-  late Box<Product> _products;
-  late Box<ProductDetail> _details;
+  late final Box<Shop> _shops;
+  late final Box<Product> _products;
+  late final Box<ProductDetail> _details;
 
   Future<void> init() async {
     Hive.registerAdapter(ShopAdapter());
@@ -18,10 +18,6 @@ class FilterService {
     _shops = await Hive.openBox<Shop>('shops');
     _products = await Hive.openBox<Product>('products');
     _details = await Hive.openBox<ProductDetail>('product_details');
-
-    // _shops.clear();
-    // _products.clear();
-    // _details.clear();
 
     if (_shops.isEmpty) {
       await _fillShops();
@@ -84,30 +80,30 @@ class FilterService {
   }
 
   _fillShops() async {
-    var lenta = Shop(0, "Ленточка");
-    var magnit = Shop(1, "Магнит");
-    var bukvar = Shop(2, "Букварь вкуса");
+    final lenta = Shop(0, "Ленточка");
+    final magnit = Shop(1, "Магнит");
+    final bukvar = Shop(2, "Букварь вкуса");
 
-    var product1 = Product(0, "prod1");
-    var product2 = Product(1, "prod2");
-    var product3 = Product(2, "prod3");
-    var product4 = Product(3, "prod1");
-    var product5 = Product(4, "prod1");
-    var product6 = Product(5, "prod6");
+    final product1 = Product(0, "prod1");
+    final product2 = Product(1, "prod2");
+    final product3 = Product(2, "prod3");
+    final product4 = Product(3, "prod1");
+    final product5 = Product(4, "prod1");
+    final product6 = Product(5, "prod6");
 
-    var detail11 = ProductDetail("weight", "100");
-    var detail12 = ProductDetail("quantity", "100");
-    var detail21 = ProductDetail("weight", "100");
-    var detail22 = ProductDetail("quantity", "150");
-    var detail31 = ProductDetail("weight", "1");
-    var detail32 = ProductDetail("quantity", "2");
+    final detail11 = ProductDetail("weight", "100");
+    final detail12 = ProductDetail("quantity", "100");
+    final detail21 = ProductDetail("weight", "100");
+    final detail22 = ProductDetail("quantity", "150");
+    final detail31 = ProductDetail("weight", "1");
+    final detail32 = ProductDetail("quantity", "2");
 
-    var detail41 = ProductDetail("weight", "100");
-    var detail42 = ProductDetail("quantity", "100");
-    var detail51 = ProductDetail("weight", "11");
-    var detail52 = ProductDetail("quantity", "150");
-    var detail61 = ProductDetail("weight", "1");
-    var detail62 = ProductDetail("quantity", "2");
+    final detail41 = ProductDetail("weight", "100");
+    final detail42 = ProductDetail("quantity", "100");
+    final detail51 = ProductDetail("weight", "11");
+    final detail52 = ProductDetail("quantity", "150");
+    final detail61 = ProductDetail("weight", "1");
+    final detail62 = ProductDetail("quantity", "2");
 
     _details.addAll([
       detail11,

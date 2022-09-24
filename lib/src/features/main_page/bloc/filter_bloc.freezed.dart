@@ -445,8 +445,7 @@ mixin _$FilterState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<FilterResult> shops) loadedDefault,
-    required TResult Function(List<FilterResult> shops) loadedByFilter,
+    required TResult Function(List<FilterResult> shops, bool filter) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -454,8 +453,7 @@ mixin _$FilterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -463,8 +461,7 @@ mixin _$FilterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -473,8 +470,7 @@ mixin _$FilterState {
     required TResult Function(InitialFilterState value) initial,
     required TResult Function(LoadingFilterState value) loading,
     required TResult Function(ErrorFilterState value) error,
-    required TResult Function(LoadedDefaultState value) loadedDefault,
-    required TResult Function(LoadedByFilterState value) loadedByFilter,
+    required TResult Function(LoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -482,8 +478,7 @@ mixin _$FilterState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -491,8 +486,7 @@ mixin _$FilterState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -558,8 +552,7 @@ class _$InitialFilterState implements InitialFilterState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<FilterResult> shops) loadedDefault,
-    required TResult Function(List<FilterResult> shops) loadedByFilter,
+    required TResult Function(List<FilterResult> shops, bool filter) loaded,
   }) {
     return initial();
   }
@@ -570,8 +563,7 @@ class _$InitialFilterState implements InitialFilterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
   }) {
     return initial?.call();
   }
@@ -582,8 +574,7 @@ class _$InitialFilterState implements InitialFilterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -598,8 +589,7 @@ class _$InitialFilterState implements InitialFilterState {
     required TResult Function(InitialFilterState value) initial,
     required TResult Function(LoadingFilterState value) loading,
     required TResult Function(ErrorFilterState value) error,
-    required TResult Function(LoadedDefaultState value) loadedDefault,
-    required TResult Function(LoadedByFilterState value) loadedByFilter,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -610,8 +600,7 @@ class _$InitialFilterState implements InitialFilterState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -622,8 +611,7 @@ class _$InitialFilterState implements InitialFilterState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -681,8 +669,7 @@ class _$LoadingFilterState implements LoadingFilterState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<FilterResult> shops) loadedDefault,
-    required TResult Function(List<FilterResult> shops) loadedByFilter,
+    required TResult Function(List<FilterResult> shops, bool filter) loaded,
   }) {
     return loading();
   }
@@ -693,8 +680,7 @@ class _$LoadingFilterState implements LoadingFilterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
   }) {
     return loading?.call();
   }
@@ -705,8 +691,7 @@ class _$LoadingFilterState implements LoadingFilterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -721,8 +706,7 @@ class _$LoadingFilterState implements LoadingFilterState {
     required TResult Function(InitialFilterState value) initial,
     required TResult Function(LoadingFilterState value) loading,
     required TResult Function(ErrorFilterState value) error,
-    required TResult Function(LoadedDefaultState value) loadedDefault,
-    required TResult Function(LoadedByFilterState value) loadedByFilter,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return loading(this);
   }
@@ -733,8 +717,7 @@ class _$LoadingFilterState implements LoadingFilterState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -745,8 +728,7 @@ class _$LoadingFilterState implements LoadingFilterState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -804,8 +786,7 @@ class _$ErrorFilterState implements ErrorFilterState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<FilterResult> shops) loadedDefault,
-    required TResult Function(List<FilterResult> shops) loadedByFilter,
+    required TResult Function(List<FilterResult> shops, bool filter) loaded,
   }) {
     return error();
   }
@@ -816,8 +797,7 @@ class _$ErrorFilterState implements ErrorFilterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
   }) {
     return error?.call();
   }
@@ -828,8 +808,7 @@ class _$ErrorFilterState implements ErrorFilterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -844,8 +823,7 @@ class _$ErrorFilterState implements ErrorFilterState {
     required TResult Function(InitialFilterState value) initial,
     required TResult Function(LoadingFilterState value) loading,
     required TResult Function(ErrorFilterState value) error,
-    required TResult Function(LoadedDefaultState value) loadedDefault,
-    required TResult Function(LoadedByFilterState value) loadedByFilter,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return error(this);
   }
@@ -856,8 +834,7 @@ class _$ErrorFilterState implements ErrorFilterState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -868,8 +845,7 @@ class _$ErrorFilterState implements ErrorFilterState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -884,41 +860,46 @@ abstract class ErrorFilterState implements FilterState {
 }
 
 /// @nodoc
-abstract class _$$LoadedDefaultStateCopyWith<$Res> {
-  factory _$$LoadedDefaultStateCopyWith(_$LoadedDefaultState value,
-          $Res Function(_$LoadedDefaultState) then) =
-      __$$LoadedDefaultStateCopyWithImpl<$Res>;
-  $Res call({List<FilterResult> shops});
+abstract class _$$LoadedStateCopyWith<$Res> {
+  factory _$$LoadedStateCopyWith(
+          _$LoadedState value, $Res Function(_$LoadedState) then) =
+      __$$LoadedStateCopyWithImpl<$Res>;
+  $Res call({List<FilterResult> shops, bool filter});
 }
 
 /// @nodoc
-class __$$LoadedDefaultStateCopyWithImpl<$Res>
-    extends _$FilterStateCopyWithImpl<$Res>
-    implements _$$LoadedDefaultStateCopyWith<$Res> {
-  __$$LoadedDefaultStateCopyWithImpl(
-      _$LoadedDefaultState _value, $Res Function(_$LoadedDefaultState) _then)
-      : super(_value, (v) => _then(v as _$LoadedDefaultState));
+class __$$LoadedStateCopyWithImpl<$Res> extends _$FilterStateCopyWithImpl<$Res>
+    implements _$$LoadedStateCopyWith<$Res> {
+  __$$LoadedStateCopyWithImpl(
+      _$LoadedState _value, $Res Function(_$LoadedState) _then)
+      : super(_value, (v) => _then(v as _$LoadedState));
 
   @override
-  _$LoadedDefaultState get _value => super._value as _$LoadedDefaultState;
+  _$LoadedState get _value => super._value as _$LoadedState;
 
   @override
   $Res call({
     Object? shops = freezed,
+    Object? filter = freezed,
   }) {
-    return _then(_$LoadedDefaultState(
+    return _then(_$LoadedState(
       shops == freezed
           ? _value._shops
           : shops // ignore: cast_nullable_to_non_nullable
               as List<FilterResult>,
+      filter: filter == freezed
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 
-class _$LoadedDefaultState implements LoadedDefaultState {
-  const _$LoadedDefaultState(final List<FilterResult> shops) : _shops = shops;
+class _$LoadedState implements LoadedState {
+  const _$LoadedState(final List<FilterResult> shops, {this.filter = false})
+      : _shops = shops;
 
   final List<FilterResult> _shops;
   @override
@@ -928,27 +909,33 @@ class _$LoadedDefaultState implements LoadedDefaultState {
   }
 
   @override
+  @JsonKey()
+  final bool filter;
+
+  @override
   String toString() {
-    return 'FilterState.loadedDefault(shops: $shops)';
+    return 'FilterState.loaded(shops: $shops, filter: $filter)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadedDefaultState &&
-            const DeepCollectionEquality().equals(other._shops, _shops));
+            other is _$LoadedState &&
+            const DeepCollectionEquality().equals(other._shops, _shops) &&
+            const DeepCollectionEquality().equals(other.filter, filter));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_shops));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_shops),
+      const DeepCollectionEquality().hash(filter));
 
   @JsonKey(ignore: true)
   @override
-  _$$LoadedDefaultStateCopyWith<_$LoadedDefaultState> get copyWith =>
-      __$$LoadedDefaultStateCopyWithImpl<_$LoadedDefaultState>(
-          this, _$identity);
+  _$$LoadedStateCopyWith<_$LoadedState> get copyWith =>
+      __$$LoadedStateCopyWithImpl<_$LoadedState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -956,10 +943,9 @@ class _$LoadedDefaultState implements LoadedDefaultState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<FilterResult> shops) loadedDefault,
-    required TResult Function(List<FilterResult> shops) loadedByFilter,
+    required TResult Function(List<FilterResult> shops, bool filter) loaded,
   }) {
-    return loadedDefault(shops);
+    return loaded(shops, filter);
   }
 
   @override
@@ -968,10 +954,9 @@ class _$LoadedDefaultState implements LoadedDefaultState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
   }) {
-    return loadedDefault?.call(shops);
+    return loaded?.call(shops, filter);
   }
 
   @override
@@ -980,12 +965,11 @@ class _$LoadedDefaultState implements LoadedDefaultState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
+    TResult Function(List<FilterResult> shops, bool filter)? loaded,
     required TResult orElse(),
   }) {
-    if (loadedDefault != null) {
-      return loadedDefault(shops);
+    if (loaded != null) {
+      return loaded(shops, filter);
     }
     return orElse();
   }
@@ -996,10 +980,9 @@ class _$LoadedDefaultState implements LoadedDefaultState {
     required TResult Function(InitialFilterState value) initial,
     required TResult Function(LoadingFilterState value) loading,
     required TResult Function(ErrorFilterState value) error,
-    required TResult Function(LoadedDefaultState value) loadedDefault,
-    required TResult Function(LoadedByFilterState value) loadedByFilter,
+    required TResult Function(LoadedState value) loaded,
   }) {
-    return loadedDefault(this);
+    return loaded(this);
   }
 
   @override
@@ -1008,10 +991,9 @@ class _$LoadedDefaultState implements LoadedDefaultState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
   }) {
-    return loadedDefault?.call(this);
+    return loaded?.call(this);
   }
 
   @override
@@ -1020,181 +1002,23 @@ class _$LoadedDefaultState implements LoadedDefaultState {
     TResult Function(InitialFilterState value)? initial,
     TResult Function(LoadingFilterState value)? loading,
     TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (loadedDefault != null) {
-      return loadedDefault(this);
+    if (loaded != null) {
+      return loaded(this);
     }
     return orElse();
   }
 }
 
-abstract class LoadedDefaultState implements FilterState {
-  const factory LoadedDefaultState(final List<FilterResult> shops) =
-      _$LoadedDefaultState;
+abstract class LoadedState implements FilterState {
+  const factory LoadedState(final List<FilterResult> shops,
+      {final bool filter}) = _$LoadedState;
 
   List<FilterResult> get shops;
+  bool get filter;
   @JsonKey(ignore: true)
-  _$$LoadedDefaultStateCopyWith<_$LoadedDefaultState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LoadedByFilterStateCopyWith<$Res> {
-  factory _$$LoadedByFilterStateCopyWith(_$LoadedByFilterState value,
-          $Res Function(_$LoadedByFilterState) then) =
-      __$$LoadedByFilterStateCopyWithImpl<$Res>;
-  $Res call({List<FilterResult> shops});
-}
-
-/// @nodoc
-class __$$LoadedByFilterStateCopyWithImpl<$Res>
-    extends _$FilterStateCopyWithImpl<$Res>
-    implements _$$LoadedByFilterStateCopyWith<$Res> {
-  __$$LoadedByFilterStateCopyWithImpl(
-      _$LoadedByFilterState _value, $Res Function(_$LoadedByFilterState) _then)
-      : super(_value, (v) => _then(v as _$LoadedByFilterState));
-
-  @override
-  _$LoadedByFilterState get _value => super._value as _$LoadedByFilterState;
-
-  @override
-  $Res call({
-    Object? shops = freezed,
-  }) {
-    return _then(_$LoadedByFilterState(
-      shops == freezed
-          ? _value._shops
-          : shops // ignore: cast_nullable_to_non_nullable
-              as List<FilterResult>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$LoadedByFilterState implements LoadedByFilterState {
-  const _$LoadedByFilterState(final List<FilterResult> shops) : _shops = shops;
-
-  final List<FilterResult> _shops;
-  @override
-  List<FilterResult> get shops {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_shops);
-  }
-
-  @override
-  String toString() {
-    return 'FilterState.loadedByFilter(shops: $shops)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadedByFilterState &&
-            const DeepCollectionEquality().equals(other._shops, _shops));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_shops));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$LoadedByFilterStateCopyWith<_$LoadedByFilterState> get copyWith =>
-      __$$LoadedByFilterStateCopyWithImpl<_$LoadedByFilterState>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() error,
-    required TResult Function(List<FilterResult> shops) loadedDefault,
-    required TResult Function(List<FilterResult> shops) loadedByFilter,
-  }) {
-    return loadedByFilter(shops);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
-  }) {
-    return loadedByFilter?.call(shops);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? error,
-    TResult Function(List<FilterResult> shops)? loadedDefault,
-    TResult Function(List<FilterResult> shops)? loadedByFilter,
-    required TResult orElse(),
-  }) {
-    if (loadedByFilter != null) {
-      return loadedByFilter(shops);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(InitialFilterState value) initial,
-    required TResult Function(LoadingFilterState value) loading,
-    required TResult Function(ErrorFilterState value) error,
-    required TResult Function(LoadedDefaultState value) loadedDefault,
-    required TResult Function(LoadedByFilterState value) loadedByFilter,
-  }) {
-    return loadedByFilter(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialFilterState value)? initial,
-    TResult Function(LoadingFilterState value)? loading,
-    TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
-  }) {
-    return loadedByFilter?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitialFilterState value)? initial,
-    TResult Function(LoadingFilterState value)? loading,
-    TResult Function(ErrorFilterState value)? error,
-    TResult Function(LoadedDefaultState value)? loadedDefault,
-    TResult Function(LoadedByFilterState value)? loadedByFilter,
-    required TResult orElse(),
-  }) {
-    if (loadedByFilter != null) {
-      return loadedByFilter(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LoadedByFilterState implements FilterState {
-  const factory LoadedByFilterState(final List<FilterResult> shops) =
-      _$LoadedByFilterState;
-
-  List<FilterResult> get shops;
-  @JsonKey(ignore: true)
-  _$$LoadedByFilterStateCopyWith<_$LoadedByFilterState> get copyWith =>
+  _$$LoadedStateCopyWith<_$LoadedState> get copyWith =>
       throw _privateConstructorUsedError;
 }

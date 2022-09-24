@@ -7,13 +7,13 @@ part 'product.g.dart';
 @HiveType(typeId: 2)
 class Product extends HiveObject {
   @HiveField(0)
-  int id;
+  final int id;
 
   @HiveField(1)
-  String name;
+  final String name;
 
   @HiveField(2)
-  late HiveList<ProductDetail> details;
+  late final HiveList<ProductDetail> details;
 
   Product(this.id, this.name);
 }

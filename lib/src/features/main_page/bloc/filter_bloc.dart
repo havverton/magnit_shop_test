@@ -19,7 +19,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
 
       final result = _filterService.getShops(event.query);
 
-      emit(FilterState.loadedByFilter(result));
+      emit(FilterState.loaded(result, filter: true));
     });
 
     on<LoadShops>((event, emit) async {
@@ -27,7 +27,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
 
       final result = _filterService.getAllShops();
 
-      emit(FilterState.loadedDefault(result));
+      emit(FilterState.loaded(result, filter: false));
     });
 
     on<FilterInitial>((event, emit) async {
